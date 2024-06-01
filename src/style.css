@@ -1,4 +1,8 @@
-*, *::before, *::after {
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap");
+
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
@@ -11,21 +15,153 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-img, picture, video, canvas, svg {
+img,
+picture,
+video,
+canvas,
+svg {
   display: block;
   max-width: 100%;
 }
 
-input, button, textarea, select {
+input,
+button,
+textarea,
+select {
   font: inherit;
 }
 
-p, h1, h2, h3, h4, h5, h6 {
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   overflow-wrap: break-word;
 }
 
-#root, #__next {
+#root,
+#__next {
   isolation: isolate;
 }
 
 /* End of reset */
+
+/* 
+Search
+inbox
+today
+upcoming
+add task
+toggle menu
+sidebar
+*/
+
+body,
+html {
+  height: 100%;
+  margin: 0;
+}
+
+html {
+  font-family: "Quicksand", Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 1rem;
+  --sidebar-color: #dbeafe;
+  --hover-sidebar-color: #d2e1f5;
+  --content-color: #eff6ff;
+  --accent-color: #3b82f6;
+  --accent-color-transparent: #3b83f621;
+  --font-color: #172554;
+}
+
+body {
+  display: flex;
+  height: 100%;
+  width: 100%;
+}
+
+.container {
+  display: flex;
+  height: 100%;
+  width: 100%;
+}
+
+.sidebar {
+  background-color: var(--sidebar-color);
+  color: var(--font-color);
+  padding: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  overflow: auto; 
+  min-width: 200px; 
+  max-width: 50%; 
+  height: 100%; 
+}
+
+.sidebar svg {
+  fill: var(--font-color);
+}
+
+.sidebar-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.sidebar .sidebar-header > button {
+  margin-left: auto;
+  padding: 0.5rem;
+}
+
+.content {
+  background-color: var(--content-color);
+  flex-grow: 1; 
+  height: 100%; 
+}
+
+/* Sidebar button styles */
+.sidebar-button {
+  display: flex;
+  align-items: center;
+  gap: 0.2rem;
+  background-color: var(--sidebar-color);
+  border: 0;
+  border-radius: 5px;
+  padding: 0.5rem 0;
+}
+
+.sidebar-button:hover,
+.sidebar-header > button:hover {
+  background-color: var(--hover-sidebar-color);
+}
+
+.sidebar-button:focus {
+  background-color: var(--accent-color-transparent);
+  color: var(--accent-color);
+}
+
+.sidebar-button:focus svg {
+  fill: var(--accent-color);
+}
+
+.sidebar #add-task {
+  color: var(--accent-color);
+  font-weight: 600;
+}
+
+.sidebar #add-task svg {
+  fill: var(--accent-color);
+}
+
+.resize-handle {
+  width: 5px;
+  cursor: ew-resize;
+  background-color: var(--content-color);
+  user-select: none;
+}
+
+.resize-handle:hover {
+  cursor: ew-resize;
+  background-color: var(--hover-sidebar-color);
+}
