@@ -5,6 +5,7 @@ export default function() {
   handle.addEventListener('mousedown', (e) => {
     e.preventDefault();
     
+    document.body.style.cursor = "ew-resize";
     document.addEventListener('mousemove', onMouseMove);
     document.addEventListener('mouseup', onMouseUp);
   });
@@ -18,6 +19,7 @@ export default function() {
   }
 
   function onMouseUp() {
+    document.body.style.cursor = "";
     document.removeEventListener('mousemove', onMouseMove);
     document.removeEventListener('mouseup', onMouseUp);
   }

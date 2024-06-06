@@ -9,7 +9,8 @@
     <div class="container">
       <div class="sidebar">
         <div class="sidebar-header">
-          <img src="./images/husky.jpeg" alt="profile picture" />
+          <img src="#" alt="profile picture" />
+          Rahil
           <button class="sidebar-button">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -82,7 +83,75 @@
         </button>
       </div>
       <div class="resize-handle"></div>
-      <div class="content"></div>
+      <div class="content">
+        <div class="task-container">
+          <h1>Inbox</h1>
+
+          <div>
+            <h3>Priority One</h3>
+            
+          </div>
+        </div>
+      </div>
+      <dialog>
+        <form action="#" method="dialog">
+          <fieldset id="name">
+            <label class="visually-hidden" for="task-name"
+              >Enter a task name</label
+            >
+            <input
+              type="text"
+              name="task-name"
+              id="task-name"
+              placeholder="Name"
+              autofocus
+            />
+          </fieldset>
+          <fieldset id="desc">
+            <label class="visually-hidden" for="task-description"
+              >Enter a task description</label
+            >
+            <input
+              type="text"
+              name="task-description"
+              id="task-description"
+              placeholder="Description"
+            />
+          </fieldset>
+          <fieldset id="misc">
+            <label class="visually-hidden" for="task-date"
+              >Choose a due date</label
+            >
+            <input
+              type="date"
+              name="task-date"
+              id="task-date"
+              placeholder="Due date"
+            />
+
+            <label class="visually-hidden" for="task-priority"
+              >Choose a priority level (optional)</label
+            >
+            <select name="task-priority" id="task-priority">
+              <option value="Priority One">Priority One</option>
+              <option value="Priority Two">Priority Two</option>
+              <option value="Priority Three">Priority Three</option>
+              <option value="Priority Four" selected>Priority Four</option>
+            </select>
+
+            <label class="visually-hidden" for="task-project"
+              >Choose a project for the task (optional)</label
+            >
+            <select name="task-project" id="task-project">
+              <option value="General" selected>General</option>
+            </select>
+          </fieldset>
+          <fieldset id="buttons">
+            <button type="reset">Cancel</button>
+            <button type="submit">Add task</button>
+          </fieldset>
+        </form>
+      </dialog>
     </div>
   </body>
 </html>
